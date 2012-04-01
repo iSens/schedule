@@ -1,29 +1,26 @@
-<h1>Listing email_schedules</h1>
-
-<table>
-  <tr>
-    <th>Trackit</th>
-    <th>Description</th>
-    <th>Do date</th>
-    <th>Webmaster</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @email_schedules.each do |email_schedule| %>
-  <tr>
-    <td><%= email_schedule.trackit %></td>
-    <td><%= email_schedule.description %></td>
-    <td><%= email_schedule.do_date %></td>
-    <td><%= email_schedule.webmaster %></td>
-    <td><%= link_to 'Show', email_schedule %></td>
-    <td><%= link_to 'Edit', edit_email_schedule_path(email_schedule) %></td>
-    <td><%= link_to 'Destroy', email_schedule, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Track-it #</th>
+      <th>Do Date</th>
+      <th>Descriptions</th>
+	  <th>Webmaster</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @email_schedules.each do |email_schedule| %>
+      <tr>
+        <td><%= link_to email_schedule.trackit, email_schedule_path(email_schedule) %></td>
+        <td><%= email_schedule.do_date.strftime('%b %d, %Y') %></td>
+        <td><%= email_schedule.description %></td>
+		<td><%= email_schedule.webmaster %></td>
+        <td>
+          <%= link_to 'Edit', edit_email_schedule_path(email_schedule), :class => 'btn btn-mini' %>
+          <%= link_to 'Destroy', email_schedule_path(email_schedule), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New Email schedule', new_email_schedule_path %>
