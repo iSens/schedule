@@ -1,0 +1,33 @@
+<%= form_for(@email_schedule) do |f| %>
+  <% if @email_schedule.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@email_schedule.errors.count, "error") %> prohibited this email_schedule from being saved:</h2>
+
+      <ul>
+      <% @email_schedule.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :trackit %><br />
+    <%= f.text_field :trackit %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :do_date %><br />
+    <%= f.date_select :do_date %>
+  </div>
+  <div class="field">
+    <%= f.label :webmaster %><br />
+    <%= f.text_field :webmaster %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

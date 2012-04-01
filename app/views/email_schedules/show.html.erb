@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Trackit:</b>
+  <%= @email_schedule.trackit %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @email_schedule.description %>
+</p>
+
+<p>
+  <b>Do date:</b>
+  <%= @email_schedule.do_date %>
+</p>
+
+<p>
+  <b>Webmaster:</b>
+  <%= @email_schedule.webmaster %>
+</p>
+
+
+<%= link_to 'Edit', edit_email_schedule_path(@email_schedule) %> |
+<%= link_to 'Back', email_schedules_path %>

@@ -1,0 +1,29 @@
+<h1>Listing email_schedules</h1>
+
+<table>
+  <tr>
+    <th>Trackit</th>
+    <th>Description</th>
+    <th>Do date</th>
+    <th>Webmaster</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @email_schedules.each do |email_schedule| %>
+  <tr>
+    <td><%= email_schedule.trackit %></td>
+    <td><%= email_schedule.description %></td>
+    <td><%= email_schedule.do_date %></td>
+    <td><%= email_schedule.webmaster %></td>
+    <td><%= link_to 'Show', email_schedule %></td>
+    <td><%= link_to 'Edit', edit_email_schedule_path(email_schedule) %></td>
+    <td><%= link_to 'Destroy', email_schedule, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Email schedule', new_email_schedule_path %>
