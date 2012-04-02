@@ -3,22 +3,12 @@ class EmailSchedulesController < ApplicationController
   # GET /email_schedules.json
   def index
     @email_schedules = EmailSchedule.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @email_schedules }
-    end
   end
 
   # GET /email_schedules/1
   # GET /email_schedules/1.json
   def show
     @email_schedule = EmailSchedule.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @email_schedule }
-    end
   end
 
   # GET /email_schedules/new

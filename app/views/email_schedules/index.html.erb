@@ -16,8 +16,11 @@
         <td><%= email_schedule.description %></td>
 		<td><%= email_schedule.webmaster %></td>
         <td>
-          <%= link_to 'Edit', edit_email_schedule_path(email_schedule), :class => 'btn btn-mini' %>
+		<% if current_user %>
           <%= link_to 'Destroy', email_schedule_path(email_schedule), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+		<% else %>
+		<span class="btn-small btn-success">N/A</span>
+  		<% end %>
         </td>
       </tr>
     <% end %>

@@ -1,0 +1,18 @@
+<%= simple_form_for @user do |f| %>  
+
+<fieldset>
+<legend>Sign Up</legend>
+<% flash.each do |name, msg| %>
+<div class="alert alert<%= name == :notice ? "-success" : "-error" %>">
+<a class="close" data-dismiss="alert">×</a>
+	<%= msg %>
+</div>
+<% end %>
+<div class="control-group">
+<%= f.input :email %>
+<%= f.input :password %>
+<%= f.input :password_confirmation %>
+<%= f.button :submit %>  
+</div>
+</fieldset>
+<% end %>

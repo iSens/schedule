@@ -1,15 +1,15 @@
 <h1>Email Schedule</h1>
   <h3>Trackit</h3>
-  <p><span class="badge badge-info"><%= @email_schedule.trackit %></span></p>
+  <p class="well"><%= @email_schedule.trackit %></p>
   <h3>Description</h3>
-  <p><%= @email_schedule.description %></p>
+  <p class="well"><%= @email_schedule.description %></p>
   <h3>Do date</h3>
-  <p><%= @email_schedule.do_date.strftime('%b %d, %Y') %></p>
+  <p class="well"><%= @email_schedule.do_date.strftime('%b %d, %Y') %></p>
   <h3>Webmaster</h3>
-  <p><%= @email_schedule.webmaster %></p>
+  <p class="well"><%= @email_schedule.webmaster %></p>
 
 <div class="form-actions">
   <%= link_to 'Back', email_schedules_path, :class => 'btn'  %>
   <%= link_to 'Edit', edit_email_schedule_path(@email_schedule), :class => 'btn' %>
-  <%= link_to 'Delete', email_schedule_path(@email_schedule), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+  <%= link_to 'Destroy', email_schedule_path(@email_schedule), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
 </div>

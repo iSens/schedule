@@ -3,16 +3,15 @@
 <fieldset>
 <legend>Email Schedule</legend>
 <% flash.each do |name, msg| %>
-<div class="alert alert-success">
-<a class="close" data-dismiss="alert">×</a>
+<div class="alert alert<%= name == :notice ? "success" : "error" %>">
 	<%= msg %>
 </div>
 <% end %>
 <div class="control-group">
 <%= f.input :trackit %>
 <%= f.input :do_date %>
-<%= f.input :description%>
-<%= f.input :webmaster %>
+<%= f.input :description %>
+<%= f.input :webmaster, :collection => [ "Chris", "David", "Denis"], :class => 'width' %>
 <%= f.button :submit %>  
 </div>
 </fieldset>
