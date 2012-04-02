@@ -12,7 +12,7 @@
     <% @email_schedules.each do |email_schedule| %>
       <tr>
         <td><%= link_to email_schedule.trackit, email_schedule_path(email_schedule) %></td>
-        <td><%= email_schedule.do_date.strftime('%b %d, %Y') %></td>
+        <td><%= email_schedule.do_date.strftime('%A, %b %d, %Y') %></td>
         <td><%= email_schedule.description %></td>
 		<td><%= email_schedule.webmaster %></td>
         <td>
