@@ -1,18 +1,14 @@
 class EmailSchedulesController < ApplicationController
-  # GET /email_schedules
-  # GET /email_schedules.json
+
   def index
-    @email_schedules = EmailSchedule.all
+    @email_schedules = EmailSchedule.order(params[:sort])
   end
 
-  # GET /email_schedules/1
-  # GET /email_schedules/1.json
   def show
     @email_schedule = EmailSchedule.find(params[:id])
   end
 
-  # GET /email_schedules/new
-  # GET /email_schedules/new.json
+
   def new
     @email_schedule = EmailSchedule.new
 
@@ -22,7 +18,7 @@ class EmailSchedulesController < ApplicationController
     end
   end
 
-  # GET /email_schedules/1/edit
+
   def edit
     @email_schedule = EmailSchedule.find(params[:id])
   end

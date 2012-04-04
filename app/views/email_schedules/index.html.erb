@@ -1,9 +1,10 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th>Track-it #</th>
-      <th>Do Date</th>
+      <th><%= link_to "Track-it", :sort => 'trackit' %></th>
+      <th><%= link_to "Do Date", :sort => 'do_date' %></th>
       <th>Descriptions</th>
+	  <th>Distribution list</th>
 	  <th>Webmaster</th>
       <th>Actions</th>
     </tr>
@@ -11,9 +12,15 @@
   <tbody>
     <% @email_schedules.each do |email_schedule| %>
       <tr>
-        <td><%= link_to email_schedule.trackit, email_schedule_path(email_schedule) %></td>
-        <td><%= email_schedule.do_date.strftime('%A, %b %d, %Y') %></td>
+        <td><% if current_user %>	
+			<%= link_to email_schedule.trackit, email_schedule_path(email_schedule) %>
+			<% else %>
+			<%= email_schedule.trackit %>
+			<% end %>
+			</td>
+        <td><%= email_schedule.do_date.strftime('%A, %B %d, %Y') %></td>
         <td><%= email_schedule.description %></td>
+		<td><%= email_schedule.list %></td>
 		<td><%= email_schedule.webmaster %></td>
         <td>
 		<% if current_user %>
