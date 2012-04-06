@@ -1,0 +1,45 @@
+<div class="page-header">
+  <h1>Capital Tickets - tickets of the week.</h1>
+</div>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th><%= link_to "Event", :sort => 'event_name' %></th>
+      <th><%= link_to "Date(s)", :sort => 'event_date' %></th>
+      <th><%= link_to "Time(s)", :sort => 'event_time' %></th>
+      <th><%= link_to "Monday", :sort => 'monday' %></th>
+      <th><%= link_to "Tuesday", :sort => 'tuesday' %></th>
+      <th><%= link_to "Wednesday", :sort => 'wednsday' %></th>
+      <th><%= link_to "Thursday", :sort => 'thursday' %></th>
+      <th><%= link_to "Friday", :sort => 'friday' %></th>
+      <th><%= link_to "Saturday", :sort => 'saturday' %></th>
+      <th><%= link_to "Sunday", :sort => 'sunday' %></th>
+      <th><%= link_to "Actions", :sort => '#' %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @captixes.each do |captix| %>
+    <tr>
+      <td><strong><%= captix.event_name %></strong></td>
+      <td><%= captix.event_date.strftime('%B %d, %Y') %></td>
+      <td><%= captix.event_time %></td>
+      <td><%= captix.monday %>&nbsp;</td>
+      <td><%= captix.tuesday %>&nbsp;</td>
+      <td><%= captix.wednsday %>&nbsp;</td>
+      <td><%= captix.thursday %>&nbsp;</td>
+      <td><%= captix.friday %>&nbsp;</td>
+      <td><%= captix.saturday %>&nbsp;</td>
+      <td><%= captix.sunday %>&nbsp;</td>
+      <td><% if current_user %><%= link_to 'Edit', edit_captix_path(captix), :class => 'btn btn-mini' %> <%= link_to 'Delete', captix_path(captix), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
+		<% else %>
+        <span class="btn-small btn-success">N/A</span>
+        <% end %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<% if current_user %>
+  <%= link_to "Add new spotlight", new_captix_path, :class => 'btn btn-primary' %>
+  <% else %>
+  <%= link_to "Log In", login_path, :class => 'btn btn-success' %>
+  <% end %>

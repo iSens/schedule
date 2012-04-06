@@ -11,7 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120403184610) do
+ActiveRecord::Schema.define(:version => 20120405222255) do
+
+  create_table "captixes", :force => true do |t|
+    t.string   "event_name"
+    t.date     "event_date"
+    t.string   "event_time"
+    t.string   "monday"
+    t.string   "tuesday"
+    t.string   "wednsday"
+    t.string   "thursday"
+    t.string   "friday"
+    t.string   "saturday"
+    t.string   "sunday"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "email_schedules", :force => true do |t|
     t.string   "trackit"

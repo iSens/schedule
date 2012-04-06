@@ -1,0 +1,25 @@
+<%= simple_form_for @captix, :html => { :class => 'form-horizontal' } do |f| %>
+<fieldset>
+	<legend>Capital tickets event</legend>
+	<% flash.each do |name, msg| %>
+<div class="alert alert<%= name == :notice ? "success" : "error" %>">
+	<%= msg %>
+</div>
+<% end %>
+<div class="control-group">
+
+	<%= f.input :event_name %>
+	<%= f.input :event_date %>
+	<%= f.input :event_time %>
+	<%= f.input :monday %>
+	<%= f.input :tuesday %>
+	<%= f.input :wednsday %>
+	<%= f.input :thursday %>
+	<%= f.input :friday %>
+	<%= f.input :saturday %>
+	<%= f.input :sunday %>
+	<%= f.button :submit, :value => 'Create new spotlight' %>  
+
+<% end %>
+</div>
+</fieldset>

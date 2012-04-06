@@ -1,0 +1,57 @@
+<h1>/Captix</h1>
+
+<p>
+  <b>Event name</b><br>
+  <%= @captix.event_name %>
+</p>
+
+<p>
+  <b>Event date</b><br>
+  <%= @captix.event_date %>
+</p>
+
+<p>
+  <b>Event time</b><br>
+  <%= @captix.event_time %>
+</p>
+
+<p>
+  <b>Monday</b><br>
+  <%= @captix.monday %>
+</p>
+
+<p>
+  <b>Tuesday</b><br>
+  <%= @captix.tuesday %>
+</p>
+
+<p>
+  <b>Wednsday</b><br>
+  <%= @captix.wednsday %>
+</p>
+
+<p>
+  <b>Thursday</b><br>
+  <%= @captix.thursday %>
+</p>
+
+<p>
+  <b>Friday</b><br>
+  <%= @captix.friday %>
+</p>
+
+<p>
+  <b>Saturday</b><br>
+  <%= @captix.saturday %>
+</p>
+
+<p>
+  <b>Sunday</b><br>
+  <%= @captix.sunday %>
+</p>
+
+<div class="form-actions">
+  <%= link_to 'Back', captixes_path, :class => 'btn'  %>
+  <%= link_to 'Edit', edit_captix_path(@captix), :class => 'btn' %>
+  <%= link_to 'Delete', captix_path(@captix), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
+</div>

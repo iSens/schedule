@@ -1,0 +1,26 @@
+<div class="page-header">
+  <h1>Welcome to Marketing Department Properties!</h1>
+</div>
+ <% if current_user %>
+ <p>This application is intended exclusively for registered users!  If you are not a registered user, but would like access to this application, please <a class="link" href="http://senators.nhl.com" >click here</a> for further information.</p>
+ <div class="row">
+ <div class="span6">	 
+	<div class="hero-unit">
+	 <h1>Emails</h1>
+	 <p>Full email schedule</p>
+	 <p><%= link_to 'Click here', email_schedules_path, :class => 'btn btn-primary btn-large' %></p>
+	 </div>
+	</div>
+ <div class="span6">
+	<div class="hero-unit">
+	 <h1>Spotlight</h1>
+	 <p>Full CapTix spotlight schedule</p>
+	 <p><%= link_to 'Click here', captixes_path, :class => 'btn btn-primary btn-large' %></p>
+	 </div>
+	</div>
+ </div>
+ <p>Go Sens Go!</p>
+  <% else %>
+  <p>This application is intended exclusively for registered users!  If you are not a registered user, but would like access to this application, please <a href="http://senators.nhl.com" >click here</a> for further information.</p>
+  <p>Go Sens Go!</p>
+  <% end %>

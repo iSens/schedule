@@ -8,7 +8,6 @@ class EmailSchedulesController < ApplicationController
     @email_schedule = EmailSchedule.find(params[:id])
   end
 
-
   def new
     @email_schedule = EmailSchedule.new
 
@@ -17,7 +16,6 @@ class EmailSchedulesController < ApplicationController
       format.json { render json: @email_schedule }
     end
   end
-
 
   def edit
     @email_schedule = EmailSchedule.find(params[:id])
@@ -39,8 +37,6 @@ class EmailSchedulesController < ApplicationController
     end
   end
 
-  # PUT /email_schedules/1
-  # PUT /email_schedules/1.json
   def update
     @email_schedule = EmailSchedule.find(params[:id])
 
@@ -55,8 +51,6 @@ class EmailSchedulesController < ApplicationController
     end
   end
 
-  # DELETE /email_schedules/1
-  # DELETE /email_schedules/1.json
   def destroy
     @email_schedule = EmailSchedule.find(params[:id])
     @email_schedule.destroy
