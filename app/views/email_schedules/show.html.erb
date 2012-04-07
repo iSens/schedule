@@ -1,14 +1,9 @@
 <h1>Email Schedule</h1>
-  <h3>Trackit</h3>
-  <p class="well"><%= @email_schedule.trackit %></p>
-  <h3>Description</h3>
-  <p class="well"><%= @email_schedule.description %></p>
-  <h3>Distribution list</h3>
-  <p class="well"><%= @email_schedule.list %></p>
-  <h3>Do date</h3>
-  <p class="well"><%= @email_schedule.do_date.strftime('%A, %b %d, %Y') %></p>
-  <h3>Webmaster</h3>
-  <p class="well"><%= @email_schedule.webmaster %></p>
+  <p><strong>Trackit:</strong> <%= @email_schedule.trackit %></p>
+  <p><strong>Description:</strong> <%= @email_schedule.description %></p>
+  <p><strong>Distribution list:</strong> <%= @email_schedule.list %></p>
+  <p><strong>Do date:</strong> <%= @email_schedule.do_date.strftime('%A, %b %d, %Y') %></p>
+  <p><strong>Webmaster:</strong> <%= @email_schedule.webmaster %></p>
 
 <div class="form-actions">
   <%= link_to 'Back', email_schedules_path, :class => 'btn'  %>

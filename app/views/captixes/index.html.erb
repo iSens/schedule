@@ -4,7 +4,7 @@
 <table class="table table-bordered">
   <thead>
     <tr>
-      <th><%= link_to "Event", :sort => 'event_name' %></th>
+      <th width="300"><%= link_to "Event", :sort => 'event_name' %></th>
       <th><%= link_to "Date(s)", :sort => 'event_date' %></th>
       <th><%= link_to "Time(s)", :sort => 'event_time' %></th>
       <th><%= link_to "Monday", :sort => 'monday' %></th>
@@ -20,16 +20,16 @@
   <tbody>
     <% @captixes.each do |captix| %>
     <tr>
-      <td><strong><%= captix.event_name %></strong></td>
-      <td><%= captix.event_date.strftime('%B %d, %Y') %></td>
-      <td><%= captix.event_time %></td>
-      <td><%= captix.monday %>&nbsp;</td>
-      <td><%= captix.tuesday %>&nbsp;</td>
-      <td><%= captix.wednsday %>&nbsp;</td>
-      <td><%= captix.thursday %>&nbsp;</td>
-      <td><%= captix.friday %>&nbsp;</td>
-      <td><%= captix.saturday %>&nbsp;</td>
-      <td><%= captix.sunday %>&nbsp;</td>
+      <td style="font-size:11px"><%= captix.event_name %></td>
+      <td style="font-size:11px"><%= captix.event_date.strftime('%b %d, %y') %></td>
+      <td style="font-size:11px"><%= captix.event_time %>&nbsp;</td>
+      <td style="font-size:11px"><%= captix.monday %>&nbsp;</td>
+      <td style="font-size:11px"><%= captix.tuesday %>&nbsp;</td>
+      <td style="font-size:11px"><%= captix.wednsday %>&nbsp;</td>
+      <td style="font-size:11px"><%= captix.thursday %>&nbsp;</td>
+      <td style="font-size:11px"><%= captix.friday %>&nbsp;</td>
+      <td style="font-size:11px"><%= captix.saturday %>&nbsp;</td>
+      <td style="font-size:11px"><%= captix.sunday %>&nbsp;</td>
       <td><% if current_user %><%= link_to 'Edit', edit_captix_path(captix), :class => 'btn btn-mini' %> <%= link_to 'Delete', captix_path(captix), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
 		<% else %>
         <span class="btn-small btn-success">N/A</span>

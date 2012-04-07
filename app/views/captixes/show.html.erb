@@ -1,57 +1,14 @@
-<h1>/Captix</h1>
-
-<p>
-  <b>Event name</b><br>
-  <%= @captix.event_name %>
-</p>
-
-<p>
-  <b>Event date</b><br>
-  <%= @captix.event_date %>
-</p>
-
-<p>
-  <b>Event time</b><br>
-  <%= @captix.event_time %>
-</p>
-
-<p>
-  <b>Monday</b><br>
-  <%= @captix.monday %>
-</p>
-
-<p>
-  <b>Tuesday</b><br>
-  <%= @captix.tuesday %>
-</p>
-
-<p>
-  <b>Wednsday</b><br>
-  <%= @captix.wednsday %>
-</p>
-
-<p>
-  <b>Thursday</b><br>
-  <%= @captix.thursday %>
-</p>
-
-<p>
-  <b>Friday</b><br>
-  <%= @captix.friday %>
-</p>
-
-<p>
-  <b>Saturday</b><br>
-  <%= @captix.saturday %>
-</p>
-
-<p>
-  <b>Sunday</b><br>
-  <%= @captix.sunday %>
-</p>
-
-<div class="form-actions">
-  <%= link_to 'Back', captixes_path, :class => 'btn'  %>
-  <%= link_to 'Edit', edit_captix_path(@captix), :class => 'btn' %>
-  <%= link_to 'Delete', captix_path(@captix), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
-</div>
+<fieldset>
+  <legend>Capital tickets event</legend>
+</fieldset>
+<p><strong>Event name:</strong> <%= @captix.event_name %> </p>
+<p><strong>Event date:</strong> <%= @captix.event_date.strftime('%B %d, %Y') %> </p>
+<p><strong>Event time:</strong> <%= @captix.event_time %> </p>
+<p><strong>Monday:</strong> <%= @captix.monday %> </p>
+<p><strong>Tuesday:</strong> <%= @captix.tuesday %> </p>
+<p><strong>Wednsday:</strong> <%= @captix.wednsday %> </p>
+<p><strong>Thursday:</strong> <%= @captix.thursday %> </p>
+<p><strong>Friday:</strong> <%= @captix.friday %> </p>
+<p><strong>Saturday:</strong> <%= @captix.saturday %> </p>
+<p><strong>Sunday:</strong> <%= @captix.sunday %> </p>
+<div class="form-actions"> <%= link_to 'Back', captixes_path, :class => 'btn'  %> <%= link_to 'Edit', edit_captix_path(@captix), :class => 'btn' %> <%= link_to 'Delete', captix_path(@captix), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %> </div>
