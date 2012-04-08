@@ -1,6 +1,7 @@
 <div class="page-header">
   <h1>Capital Tickets - tickets of the week.</h1>
 </div>
+<% if current_user %>
 <table class="table table-bordered">
   <thead>
     <tr>
@@ -30,15 +31,11 @@
       <td style="font-size:11px"><%= captix.friday %>&nbsp;</td>
       <td style="font-size:11px"><%= captix.saturday %>&nbsp;</td>
       <td style="font-size:11px"><%= captix.sunday %>&nbsp;</td>
-      <td><% if current_user %><%= link_to 'Edit', edit_captix_path(captix), :class => 'btn btn-mini' %> <%= link_to 'Delete', captix_path(captix), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
-		<% else %>
-        <span class="btn-small btn-success">N/A</span>
-        <% end %></td>
+      <td><%= link_to 'Edit', edit_captix_path(captix), :class => 'btn btn-mini' %> <%= link_to 'Delete', captix_path(captix), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %></td>
     </tr>
     <% end %>
   </tbody>
 </table>
-<% if current_user %>
   <%= link_to "Add new spotlight", new_captix_path, :class => 'btn btn-primary' %>
   <% else %>
   <%= link_to "Log In", login_path, :class => 'btn btn-success' %>

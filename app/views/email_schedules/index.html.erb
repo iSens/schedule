@@ -1,6 +1,7 @@
 <div class="page-header">
   <h1>Email Schedules</h1>
 </div>
+<% if current_user %>
 <table class="table table-bordered">
   <thead>
     <tr>
@@ -20,16 +21,11 @@
       <td><%= email_schedule.description %>&nbsp;</td>
       <td><%= email_schedule.list %>&nbsp;</td>
       <td><%= email_schedule.webmaster %>&nbsp;</td>
-      <td><% if current_user %>
-        <%= link_to 'Edit', edit_email_schedule_path(email_schedule), :class => 'btn btn-mini' %> <%= link_to 'Delete', email_schedule_path(email_schedule), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %>
-        <% else %>
-        <span class="btn-small btn-success">N/A</span>
-        <% end %></td>
+      <td><%= link_to 'Edit', edit_email_schedule_path(email_schedule), :class => 'btn btn-mini' %> <%= link_to 'Delete', email_schedule_path(email_schedule), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %></td>
     </tr>
     <% end %>
   </tbody>
 </table>
-<% if current_user %>
   <%= link_to 'Add new email', new_email_schedule_path, :class => 'btn btn-primary' %>
   <% else %>
   <%= link_to "Log In", login_path, :class => 'btn btn-success' %>
