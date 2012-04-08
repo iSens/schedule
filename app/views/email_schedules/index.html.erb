@@ -5,8 +5,8 @@
 <table class="table table-bordered">
   <thead>
     <tr>
-      <th><%= link_to "Track-it", :sort => 'trackit' %></th>
-      <th><%= link_to "Do Date", :sort => 'do_date' %></th>
+      <th><%= sortable 'trackit' %></th>
+      <th><%= sortable 'do_date' %></th>
       <th>Descriptions</th>
       <th>Distribution list</th>
       <th>Webmaster</th>
@@ -16,12 +16,12 @@
   <tbody>
     <% @email_schedules.each do |email_schedule| %>
     <tr>
-      <td><%= email_schedule.trackit %>&nbsp;</td>
-      <td><%= email_schedule.do_date.strftime('%A, %B %d, %Y') %>&nbsp;</td>
-      <td><%= email_schedule.description %>&nbsp;</td>
-      <td><%= email_schedule.list %>&nbsp;</td>
-      <td><%= email_schedule.webmaster %>&nbsp;</td>
-      <td><%= link_to 'Edit', edit_email_schedule_path(email_schedule), :class => 'btn btn-mini' %> <%= link_to 'Delete', email_schedule_path(email_schedule), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %></td>
+      <td style="font-size:11px"><%= email_schedule.trackit %>&nbsp;</td>
+      <td style="font-size:11px"><%= email_schedule.do_date.strftime('%A, %B %d, %Y') %>&nbsp;</td>
+      <td style="font-size:11px"><%= email_schedule.description %>&nbsp;</td>
+      <td style="font-size:11px"><%= email_schedule.list %>&nbsp;</td>
+      <td style="font-size:11px"><%= email_schedule.webmaster %>&nbsp;</td>
+      <td style="font-size:11px"><%= link_to 'Edit', edit_email_schedule_path(email_schedule), :class => 'btn btn-mini' %> <%= link_to 'Delete', email_schedule_path(email_schedule), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-mini btn-danger' %></td>
     </tr>
     <% end %>
   </tbody>

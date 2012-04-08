@@ -1,7 +1,7 @@
 class EmailSchedulesController < ApplicationController
 
   def index
-    @email_schedules = EmailSchedule.order(params[:sort])
+    @email_schedules = EmailSchedule.order(sort_column + " " + sort_direction)
   end
 
   def show
@@ -60,4 +60,13 @@ class EmailSchedulesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  private
+  def sort_column
+      params[:sort] || "do_date"
+    end
+
+    def sort_direction
+      params[:direction] || "asc"
+    end
 end

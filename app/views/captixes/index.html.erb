@@ -5,17 +5,17 @@
 <table class="table table-bordered">
   <thead>
     <tr>
-      <th width="300"><%= link_to "Event", :sort => 'event_name' %></th>
-      <th><%= link_to "Date(s)", :sort => 'event_date' %></th>
-      <th><%= link_to "Time(s)", :sort => 'event_time' %></th>
-      <th><%= link_to "Monday", :sort => 'monday' %></th>
-      <th><%= link_to "Tuesday", :sort => 'tuesday' %></th>
-      <th><%= link_to "Wednesday", :sort => 'wednsday' %></th>
-      <th><%= link_to "Thursday", :sort => 'thursday' %></th>
-      <th><%= link_to "Friday", :sort => 'friday' %></th>
-      <th><%= link_to "Saturday", :sort => 'saturday' %></th>
-      <th><%= link_to "Sunday", :sort => 'sunday' %></th>
-      <th><%= link_to "Actions", :sort => '#' %></th>
+      <th width="300"><%= sortable 'event_name' %></th>
+      <th><%= sortable 'event_date' %></th>
+      <th><%= sortable  'event_time' %></th>
+      <th><%= sortable 'monday' %></th>
+      <th><%= sortable 'tuesday' %></th>
+      <th><%= sortable 'wednsday' %></th>
+      <th><%= sortable 'thursday' %></th>
+      <th><%= sortable 'friday' %></th>
+      <th><%= sortable 'saturday' %></th>
+      <th><%= sortable 'sunday' %></th>
+      <th>Actions</th>
     </tr>
   </thead>
   <tbody>

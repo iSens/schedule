@@ -1,7 +1,7 @@
 class CaptixesController < ApplicationController
  
   def index
-    @captixes = Captix.order(params[:sort])
+    @captixes = Captix.order(sort_column + " " + sort_direction)
   end
 
   def show
@@ -58,4 +58,14 @@ class CaptixesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  private
+  def sort_column
+      params[:sort] || "event_date"
+    end
+
+    def sort_direction
+      params[:direction] || "asc"
+    end
+  
 end
