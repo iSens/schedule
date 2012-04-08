@@ -1,3 +1,4 @@
+<% if current_user %>
 <fieldset>
   <legend>Capital tickets event</legend>
 </fieldset>
@@ -12,3 +13,6 @@
 <p><strong>Saturday:</strong> <%= @captix.saturday %> </p>
 <p><strong>Sunday:</strong> <%= @captix.sunday %> </p>
 <div class="form-actions"> <%= link_to 'Back', captixes_path, :class => 'btn'  %> <%= link_to 'Edit', edit_captix_path(@captix), :class => 'btn' %> <%= link_to 'Delete', captix_path(@captix), :method => 'delete', :confirm => 'Are you sure?', :class => 'btn btn-danger' %> </div>
+<% else %>
+<%= link_to "Log In", login_path, :class => 'btn btn-success' %>
+<% end %>

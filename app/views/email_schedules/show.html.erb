@@ -1,3 +1,4 @@
+<% if current_user %>
 <h1>Email Schedule</h1>
   <p><strong>Trackit:</strong> <%= @email_schedule.trackit %></p>
   <p><strong>Description:</strong> <%= @email_schedule.description %></p>
@@ -10,3 +11,6 @@
   <%= link_to 'Edit', edit_email_schedule_path(@email_schedule), :class => 'btn' %>
   <%= link_to 'Destroy', email_schedule_path(@email_schedule), :method => :delete, :confirm => 'Are you sure?', :class => 'btn btn-danger' %>
 </div>
+<% else %>
+<%= link_to "Log In", login_path, :class => 'btn btn-success' %>
+<% end %>
